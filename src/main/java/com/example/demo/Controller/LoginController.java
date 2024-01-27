@@ -22,5 +22,15 @@ public class LoginController {
     public AccountReponse login(@RequestBody AccountRequest accountRequest) {
         return accountService.login(accountRequest).orElse(null);
     }
+    @PostMapping("/register")
+    public ResponseEntity<AccountReponse> register(@RequestBody AccountRequest accountRequest) {
+        Optional<AccountReponse> response = accountService.register(accountRequest);
+        if (response.isPresent()) {
+            return ResponseEntity.status(HttpStatus.CREATED).body(response.get());
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+    }
 }
+
 

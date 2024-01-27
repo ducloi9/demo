@@ -8,6 +8,7 @@ import com.example.demo.Repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.Optional;
 @Service
 public class AccountService {
@@ -24,4 +25,17 @@ public class AccountService {
 
         return accountOptional.map(accountMapper::toResponse);
     }
+
+    public Optional<AccountReponse> register(AccountRequest request) {
+        if (accountRepository.existsByEmail(request.getEmail())) {
+            return Optional.empty();
+        }
+        Account account = accountMapper.toEntity(request);
+        account.setCreatedAt(new Date(System.currentTimeMillis()));
+        Account savedAccount = accountRepository.save(account);
+        AccountReponse response = accountMapper.toResponse(savedAccount);
+
+        return Optional.of(response);
+    }
 }
+

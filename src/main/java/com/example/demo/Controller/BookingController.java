@@ -9,8 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
-
 @RestController
 @RequestMapping("/api/bookings")
 public class BookingController {
@@ -45,5 +45,10 @@ public class BookingController {
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
+    }
+    @GetMapping("/account/{accountId}")
+    public ResponseEntity<List<BookingReponse>> getAllBookingsByAccountId(@PathVariable Long accountId) {
+        List<BookingReponse> bookings = bookingService.getAllBookingsByAccountId(accountId);
+        return ResponseEntity.ok(bookings);
     }
 }

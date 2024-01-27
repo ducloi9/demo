@@ -10,10 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
-import java.time.Duration;
-import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class BookingService {
@@ -94,6 +93,12 @@ public class BookingService {
         } else {
             throw new RuntimeException("Booking with id " + id + " not found");
         }
+    }
+    public List<BookingReponse> getAllBookingsByAccountId(Long accountId) {
+        return bookingRepository.findAllByAccountId(accountId)
+                .stream()
+                .map(bookingMapper::toResponse)
+                .collect(Collectors.toList());
     }
 }
 
