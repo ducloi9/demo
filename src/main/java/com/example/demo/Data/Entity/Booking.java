@@ -21,7 +21,6 @@ public class Booking {
 
     @Column(name = "account_id")
     private int accountId;
-
     @Column(name = "staff_id")
     private int staffId;
 

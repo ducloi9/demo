@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.sql.Date;
-
 @Entity
 @Table(name = "patient")
 @NoArgsConstructor

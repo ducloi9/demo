@@ -1,5 +1,4 @@
 package com.example.demo.Data.Mapper;
-
 import com.example.demo.Data.Entity.Doctor;
 import com.example.demo.Data.Entity.Patient;
 import com.example.demo.Data.Reponse.DoctorReponse;

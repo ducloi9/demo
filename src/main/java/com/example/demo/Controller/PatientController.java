@@ -1,6 +1,5 @@
 package com.example.demo.Controller;
 
-import com.example.demo.Data.Mapper.PatientMapper;
 import com.example.demo.Data.Reponse.PatientReponse;
 import com.example.demo.Data.Request.PatientRequest;
 import com.example.demo.Service.PatientService;

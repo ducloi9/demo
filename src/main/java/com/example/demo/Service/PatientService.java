@@ -1,6 +1,6 @@
 package com.example.demo.Service;
 
-import com.example.demo.Data.Entity.Booking;
+
 import com.example.demo.Data.Entity.Patient;
 import com.example.demo.Data.Mapper.PatientMapper;
 import com.example.demo.Data.Reponse.BookingReponse;

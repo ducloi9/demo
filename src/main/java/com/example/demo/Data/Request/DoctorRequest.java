@@ -4,7 +4,6 @@ import jakarta.persistence.Column;
 import lombok.*;
 
 import java.sql.Date;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

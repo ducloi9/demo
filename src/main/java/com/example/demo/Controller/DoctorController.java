@@ -25,7 +25,6 @@ public class DoctorController {
         Optional<DoctorReponse> doctorResponse = doctorService.findDoctorById(id);
         return doctorResponse.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
-
     @GetMapping("/all")
     public ResponseEntity<List<DoctorReponse>> getAllDoctors() {
         List<DoctorReponse> doctors = doctorService.getAllDoctors();

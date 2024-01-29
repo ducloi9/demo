@@ -3,7 +3,6 @@ package com.example.demo.Data.Reponse;
 import lombok.*;
 
 import java.sql.Date;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
